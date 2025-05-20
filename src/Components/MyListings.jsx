@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Home = () => {
+const MyListings = () => {
     return (
         <div className='min-h-[calc(100vh-323px)]'>
-            I am home
+            This is my listings
         </div>
     );
 };
 
-export default Home;
+export default MyListings;
