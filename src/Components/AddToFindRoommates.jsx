@@ -1,6 +1,9 @@
-import React from "react";
+import React, { use } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AddToFindRoommates = () => {
+  const { user } = use(AuthContext);
+
   const handleAddListing = (e) => {
     e.preventdefault();
     // const form = e.target;
@@ -67,7 +70,7 @@ const AddToFindRoommates = () => {
           </fieldset>
           <fieldset className="fieldset rounded-box p-4">
             <label className="label text-white">Lifestyle Preferences</label>
-             <select
+            <select
               defaultValue="Choose a room type"
               type="select"
               name="lifeStyle"
@@ -121,17 +124,17 @@ const AddToFindRoommates = () => {
               type="text"
               className="input w-full font-bold"
               name="name"
-              defaultValue={"My name"}
+              defaultValue={user && user.displayName}
               readOnly
             />
           </fieldset>
           <fieldset className="fieldset rounded-box p-4">
             <label className="label text-white">User Email</label>
             <input
-              type="text"
+              type="email"
               className="input w-full font-bold"
-              name="name"
-              defaultValue={"My Email"}
+              name="email"
+              defaultValue={user && user.email}
               readOnly
             />
           </fieldset>
