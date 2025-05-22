@@ -8,6 +8,8 @@ import AuthLayout from "../Layouts/AuthLayout";
 import LogIn from "../Components/LogIn";
 import SignUp from "../Components/SignUp";
 import PrivateRoute from "../Provider/PrivateRoute";
+import UpdateListings from "../Components/UpdateListings";
+import ListingDetails from "../Components/ListingDetails";
 
 export const router = createBrowserRouter([
   {
@@ -39,7 +41,7 @@ export const router = createBrowserRouter([
         path: "/listinigDetails/:id",
         element: (
           <PrivateRoute>
-            
+            <ListingDetails></ListingDetails>
           </PrivateRoute>
         )
       },
@@ -51,6 +53,15 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/updateListings/:id",
+        loader: ({params}) => fetch(`http://localhost:3000/listings/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <UpdateListings></UpdateListings>
+          </PrivateRoute>
+        )
+      }
     ],
   },
   {
