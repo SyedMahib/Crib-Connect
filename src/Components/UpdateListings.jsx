@@ -1,6 +1,6 @@
 import React, { use } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 const UpdateListings = () => {
@@ -17,6 +17,8 @@ const UpdateListings = () => {
   } = useLoaderData();
 
   const { user } = use(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleUpdateListing = (e) => {
     e.preventDefault();
@@ -42,6 +44,7 @@ const UpdateListings = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          navigate("/myListings")
         }
       });
   };
