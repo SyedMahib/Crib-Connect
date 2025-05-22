@@ -9,7 +9,7 @@ const BrowseListings = () => {
 
     return (
         <div className='min-h-[calc(100vh-323px)]'>
-            <div className='grid grid-cols-3 gap-5 my-[100px]'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-[100px] mx-3'>
                 {
                     listings.map((listing) => <ListingCard key={listing._id} listing={listing}></ListingCard>)
                 }

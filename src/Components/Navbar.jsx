@@ -85,7 +85,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm rounded-3xl px-5">
+    <div className="navbar bg-base-100 shadow-sm rounded-3xl px-2 md:px-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -113,14 +113,14 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center gap-2">
-          <img className="w-[70px]" src={logo} alt="" />
-          <a className="font-extrabold text-2xl text-[#3D365C]">CribConnect</a>
+          <img className="w-[35px] md:w-[70px]" src={logo} alt="" />
+          <a className="font-extrabold text-lg md:text-2xl text-[#3D365C]">CribConnect</a>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
-      <div className="navbar-end space-x-3">
+      <div className="navbar-end">
         {user ? (
           <div className="dropdown dropdown-end">
             <div
@@ -158,16 +158,16 @@ const Navbar = () => {
             </ul>
           </div>
         ) : (
-          <div className="space-x-2">
+          <div className="flex flex-col items-center gap-2">
             <Link
               to={`/auth/login`}
-              className=" bg-[#F8B55F] btn text-[#3D365C] font-bold"
+              className=" bg-[#F8B55F] btn text-[#3D365C] font-bold text-xs w-[70px]"
             >
               LogIn
             </Link>
             <Link
               to={`/auth/signUp`}
-              className=" bg-[#F8B55F] btn text-[#3D365C] font-bold"
+              className=" bg-[#F8B55F] btn text-[#3D365C] font-bold text-xs w-[70px]"
             >
               SignUp
             </Link>

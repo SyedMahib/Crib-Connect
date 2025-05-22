@@ -72,109 +72,55 @@ const MyListings = () => {
 
   return (
     <div className="min-h-[calc(100vh-323px)]">
-      <h1 className="text-4xl font-bold text-[#3D365C] text-center mb-10 mt-10">
-        My Roommate Listings
-      </h1>
+      <h1 className="text-2xl md:text-4xl font-bold text-[#3D365C] text-center mb-10 mt-10">My Roommate Listings</h1>
 
       {myListings.length === 0 ? (
-        <div className="text-center text-xl text-gray-500 mt-10">
-          You haven't posted any listings yet.
-          <Link
-            to="/addToFindRoommates"
-            className="text-[#7C4585] hover:underline"
-          >
+        <div className="text-center text-xl text-gray-500">
+          You haven't posted any listings yet.{" "}
+          <Link to="/addToFindRoommates" className="text-[#7C4585] hover:underline">
             Add a new listing!
           </Link>
         </div>
       ) : (
-        <>
-          <div className="overflow-x-auto shadow-lg rounded-lg hidden md:block">
-            {" "}
-            {/* Hide on small screens */}
-            <table className="table w-full bg-white">
-              <thead className="bg-[#7C4585] text-white">
-                <tr>
-                  <th>Title</th>
-                  <th>Location</th>
-                  <th>Rent Amount</th>
-                  <th>Lifestyle</th>
-                  <th className="w-24">Update</th>
-                  <th className="w-24">Delete</th>
+        <div className="overflow-x-auto shadow-lg rounded-lg mx-3 mb-10">
+          <table className="table w-full bg-white min-w-max"> 
+            {/* Table Head */}
+            <thead className="bg-[#7C4585] text-white">
+              <tr>
+                <th className="p-4 whitespace-nowrap">Title</th>
+                <th className="p-4 whitespace-nowrap">Location</th>
+                <th className="p-4 whitespace-nowrap">Rent Amount</th>
+                <th className="p-4 whitespace-nowrap">Lifestyle</th>
+                <th className="p-4 w-24 whitespace-nowrap">Update</th>
+                <th className="p-4 w-24 whitespace-nowrap">Delete</th>
+              </tr>
+            </thead>
+            {/* Table Body */}
+            <tbody>
+              {myListings.map((listing) => (
+                <tr key={listing._id} className="hover:bg-gray-50 border-b border-gray-200">
+                  <td className="font-semibold text-[#3D365C] p-4 whitespace-nowrap">{listing.title}</td>
+                  <td className="p-4 whitespace-nowrap max-w-[200px] truncate">{listing.location}</td>
+                  <td className="p-4 whitespace-nowrap">৳ {listing.rentAmount}/month</td>
+                  <td className="p-4 whitespace-nowrap">{listing.lifeStyle}</td>
+                  <td className="p-4">
+                    <Link to={`/updateListing/${listing._id}`} className="btn btn-sm bg-[#F8B55F] text-[#3D365C] hover:bg-[#E8A54F] border-0 w-full">
+                      Update
+                    </Link>
+                  </td>
+                  <td className="p-4">
+                    <button
+                      onClick={() => handleDelete(listing._id)}
+                      className="btn btn-sm bg-red-500 text-white hover:bg-red-600 border-0 w-full"
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {myListings.map((listing) => (
-                  <tr key={listing._id} className="hover:bg-gray-50">
-                    <td className="font-semibold text-[#3D365C]">
-                      {listing.title}
-                    </td>
-                    <td>{listing.location}</td>
-                    <td>${listing.rentAmount}/month</td>
-                    <td>{listing.lifeStyle}</td>
-                    <td>
-                      <Link
-                        to={`/updateListing/${listing._id}`}
-                        className="btn btn-sm bg-[#F8B55F] text-[#3D365C] hover:bg-[#E8A54F] border-0 w-full"
-                      >
-                        Update
-                      </Link>
-                    </td>
-                    <td>
-                      <button
-                        onClick={() => handleDelete(listing._id)}
-                        className="btn btn-sm bg-red-500 text-white hover:bg-red-600 border-0 w-full"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Mobile Card View */}
-          <div className="grid grid-cols-1 gap-4 md:hidden px-3">
-            {" "}
-            {myListings.map((listing) => (
-              <div
-                key={listing._id}
-                className="bg-white rounded-lg shadow-md p-4 border border-gray-200"
-              >
-                <h3 className="text-xl font-bold text-[#3D365C] mb-2">
-                  {listing.title}
-                </h3>
-                <p className="text-gray-700 mb-1">
-                  <span className="font-semibold">Location:</span>
-                  {listing.location}
-                </p>
-                <p className="text-gray-700 mb-1">
-                  <span className="font-semibold">Rent:</span> $
-                  {listing.rentAmount}/month
-                </p>
-                <p className="text-gray-700 mb-4">
-                  <span className="font-semibold">Lifestyle:</span>
-                  <span>{listing.lifeStyle}</span>
-                </p>
-
-                <div className="flex flex-col space-y-2">
-                  <Link
-                    to={`/updateListing/${listing._id}`}
-                    className="w-full btn bg-[#F8B55F] text-[#3D365C] hover:bg-[#E8A54F] border-0"
-                  >
-                    Update
-                  </Link>
-                  <button
-                    onClick={() => handleDelete(listing._id)}
-                    className="w-full btn bg-red-500 text-white hover:bg-red-600 border-0"
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

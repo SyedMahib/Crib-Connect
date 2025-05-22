@@ -36,22 +36,22 @@ const AddToFindRoommates = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-323px)]">
+    <div className="min-h-[calc(100vh-323px)] mx-3">
       <div className="text-center mt-20 space-y-4">
-        <h1 className="text-5xl text-primary font-bold">
+        <h1 className="text-3xl md:text-5xl text-primary font-bold">
           Add To Find Roommate
         </h1>
-        <p className="text-xl text-secondary font-medium">
+        <p className="text-sm md:text-xl text-secondary font-medium">
           Finding roommates is now easier than ever with CribConnect. Fill up
           this form and post your for your roommate
         </p>
       </div>
       <form
         onSubmit={handleAddListing}
-        className="my-10 bg-primary p-10 rounded-2xl"
+        className="my-10 bg-primary p-5 md:p-10 rounded-2xl"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
-          <fieldset className="fieldset rounded-box p-4">
+          <fieldset className="fieldset rounded-box md:p-4">
             <label className="label text-white">Title</label>
             <input
               type="text"
@@ -61,7 +61,7 @@ const AddToFindRoommates = () => {
               required
             />
           </fieldset>
-          <fieldset className="fieldset rounded-box p-4">
+          <fieldset className="fieldset rounded-box md:p-4">
             <label className="label text-white">Location</label>
             <input
               type="text"
@@ -71,7 +71,7 @@ const AddToFindRoommates = () => {
               required
             />
           </fieldset>
-          <fieldset className="fieldset rounded-box p-4">
+          <fieldset className="fieldset rounded-box md:p-4">
             <label className="label text-white">Room Type</label>
             <select
               defaultValue="Choose a room type"
@@ -84,7 +84,7 @@ const AddToFindRoommates = () => {
               <option>Shared</option>
             </select>
           </fieldset>
-          <fieldset className="fieldset rounded-box p-4">
+          <fieldset className="fieldset rounded-box md:p-4">
             <label className="label text-white">Rent Amount</label>
             <input
               type="text"
@@ -94,7 +94,7 @@ const AddToFindRoommates = () => {
               required
             />
           </fieldset>
-          <fieldset className="fieldset rounded-box p-4">
+          <fieldset className="fieldset rounded-box md:p-4">
             <label className="label text-white">Lifestyle Preferences</label>
             <select
               defaultValue="Choose a room type"
@@ -111,7 +111,7 @@ const AddToFindRoommates = () => {
               <option>Gamer</option>
             </select>
           </fieldset>
-          <fieldset className="fieldset rounded-box p-4">
+          <fieldset className="fieldset rounded-box md:p-4">
             <label className="label text-white">Description</label>
             <input
               type="text"
@@ -121,7 +121,7 @@ const AddToFindRoommates = () => {
               required
             />
           </fieldset>
-          <fieldset className="fieldset rounded-box p-4">
+          <fieldset className="fieldset rounded-box md:p-4">
             <label className="label text-white">Contact Info</label>
             <input
               type="text"
@@ -131,7 +131,7 @@ const AddToFindRoommates = () => {
               required
             />
           </fieldset>
-          <fieldset className="fieldset rounded-box p-4">
+          <fieldset className="fieldset rounded-box md:p-4">
             <label className="label text-white">Availability</label>
             <select
               defaultValue="Choose a room type"
@@ -144,7 +144,7 @@ const AddToFindRoommates = () => {
               <option>Not Available</option>
             </select>
           </fieldset>
-          <fieldset className="fieldset rounded-box p-4">
+          <fieldset className="fieldset rounded-box md:p-4">
             <label className="label text-white">User Name</label>
             <input
               type="text"
@@ -154,7 +154,7 @@ const AddToFindRoommates = () => {
               readOnly
             />
           </fieldset>
-          <fieldset className="fieldset rounded-box p-4">
+          <fieldset className="fieldset rounded-box md:p-4">
             <label className="label text-white">User Email</label>
             <input
               type="email"
