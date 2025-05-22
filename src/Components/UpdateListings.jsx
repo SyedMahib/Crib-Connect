@@ -25,7 +25,7 @@ const UpdateListings = () => {
     const updateListings = Object.fromEntries(formData.entries());
     console.log(updateListings);
 
-    fetch(`http://localhost:3000/listings/${_id}`, {
+    fetch(`https://a-10-server-side-phi.vercel.app/listings/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

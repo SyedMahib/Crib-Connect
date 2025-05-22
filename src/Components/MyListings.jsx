@@ -9,7 +9,7 @@ const MyListings = () => {
   const [error, setError] = useState(null);
 
   const myListingData = () => {
-    fetch(`http://localhost:3000/listings?email=${user.email}`)
+    fetch(`https://a-10-server-side-phi.vercel.app/listings?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyListings(data);
@@ -34,7 +34,7 @@ const MyListings = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/listings/${id}`, {
+        fetch(`https://a-10-server-side-phi.vercel.app/listings/${id}`, {
           method: "DELETE",
         })
           .then((res) => {

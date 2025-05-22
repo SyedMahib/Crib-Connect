@@ -158,16 +158,16 @@ const Navbar = () => {
             </ul>
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col md:flex-row items-center gap-2">
             <Link
               to={`/auth/login`}
-              className=" bg-[#F8B55F] btn text-[#3D365C] font-bold text-xs w-[70px]"
+              className=" bg-[#F8B55F] btn text-[#3D365C] font-bold text-xs md:text-sm w-[70px]"
             >
               LogIn
             </Link>
             <Link
               to={`/auth/signUp`}
-              className=" bg-[#F8B55F] btn text-[#3D365C] font-bold text-xs w-[70px]"
+              className=" bg-[#F8B55F] btn text-[#3D365C] font-bold text-xs md:text-sm w-[70px]"
             >
               SignUp
             </Link>

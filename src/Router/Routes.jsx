@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/browseListings",
-        loader: () => fetch("http://localhost:3000/listings"),
+        loader: () => fetch("https://a-10-server-side-phi.vercel.app/listings"),
         element: (
           <PrivateRoute>
             <BrowseListings></BrowseListings>
@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/updateListings/:id",
-        loader: ({params}) => fetch(`http://localhost:3000/listings/${params.id}`),
+        loader: ({params}) => fetch(`https://a-10-server-side-phi.vercel.app/listings/${params.id}`),
         element: (
           <PrivateRoute>
             <UpdateListings></UpdateListings>
