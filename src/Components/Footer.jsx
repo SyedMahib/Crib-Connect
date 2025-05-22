@@ -6,7 +6,7 @@ import Logo from "../assets/logo.png";
 const Footer = () => {
   return (
     <footer className="footer  bg-[#3D365C]   p-10">
-      <div className="flex justify-between text-neutral-content items-center container mx-auto">
+      <div className="flex flex-col md:flex-row justify-between text-neutral-content md:items-center container md:mx-auto">
         <aside className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             <img src={Logo} alt="" className="w-[85px]" />

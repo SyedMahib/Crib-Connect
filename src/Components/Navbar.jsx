@@ -44,7 +44,7 @@ const Navbar = () => {
           }
           to="/"
         >
-          <FaHome />
+          <FaHome size={21}/>
           Home
         </NavLink>
       </li>
