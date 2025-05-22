@@ -1,12 +1,38 @@
 import React, { use } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToFindRoommates = () => {
   const { user } = use(AuthContext);
 
   const handleAddListing = (e) => {
-    e.preventdefault();
-    // const form = e.target;
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const newListing = Object.fromEntries(formData.entries());
+    console.log(newListing);
+
+    // sending data to the db
+
+    fetch("http://localhost:3000/listings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newListing),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Listing added successfully !",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
   };
 
   return (
@@ -49,7 +75,7 @@ const AddToFindRoommates = () => {
             <label className="label text-white">Room Type</label>
             <select
               defaultValue="Choose a room type"
-              type="select"
+              type="text"
               name="roomType"
               className="select w-full"
             >
@@ -72,7 +98,7 @@ const AddToFindRoommates = () => {
             <label className="label text-white">Lifestyle Preferences</label>
             <select
               defaultValue="Choose a room type"
-              type="select"
+              type="text"
               name="lifeStyle"
               className="select w-full"
             >
@@ -109,7 +135,7 @@ const AddToFindRoommates = () => {
             <label className="label text-white">Availability</label>
             <select
               defaultValue="Choose a room type"
-              type="select"
+              type="text"
               name="availability"
               className="select w-full"
             >

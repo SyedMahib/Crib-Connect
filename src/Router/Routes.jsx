@@ -28,6 +28,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/browseListings",
+        loader: () => fetch("http://localhost:3000/listings"),
         element: (
           <PrivateRoute>
             <BrowseListings></BrowseListings>
