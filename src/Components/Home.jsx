@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import Banner from './Banner';
 import FeaturedListings from './FeaturedListings';
 import { AuthContext } from '../Provider/AuthProvider';
+import HowItWorks from './HowItWorks';
 
 const Home = () => {
 
@@ -18,6 +19,7 @@ const Home = () => {
                         <FeaturedListings></FeaturedListings>
                     )
                 }
+                <HowItWorks></HowItWorks>
             </main>
         </div>
     );

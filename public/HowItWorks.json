@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "icon": "🔍",
+    "title": "Search for Roommates",
+    "description": "Browse through our diverse listings. Use filters to find your ideal match based on location, budget, and lifestyle preferences."
+  },
+  {
+    "id": 2,
+    "icon": "💬",
+    "title": "Connect & Chat",
+    "description": "Found someone interesting? Connect securely through our platform. Discuss expectations, habits, and get to know each other."
+  },
+  {
+    "id": 3,
+    "icon": "🏡",
+    "title": "Find Your Perfect Home",
+    "description": "Once you've found a great match, finalize the details and move into your new home. Start your new chapter with confidence!"
+  }
+]
