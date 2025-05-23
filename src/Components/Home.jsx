@@ -3,6 +3,7 @@ import Banner from './Banner';
 import FeaturedListings from './FeaturedListings';
 import { AuthContext } from '../Provider/AuthProvider';
 import HowItWorks from './HowItWorks';
+import Testimonials from './Testimonials';
 
 const Home = () => {
 
@@ -20,6 +21,7 @@ const Home = () => {
                     )
                 }
                 <HowItWorks></HowItWorks>
+                <Testimonials></Testimonials>
             </main>
         </div>
     );

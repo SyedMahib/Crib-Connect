@@ -40,7 +40,7 @@ const HowItWorks = () => {
             to="/browseListings" 
             className="inline-block bg-[#F8B55F] text-primary hover:bg-[#E8A54F] font-bold py-3 px-8 rounded-full transition-colors duration-300 text-lg shadow-md hover:shadow-lg"
           >
-            Start Your Search
+            Start Browsing Roommates
           </Link>
         </div>
 

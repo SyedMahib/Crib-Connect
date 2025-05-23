@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "quote": "Finding my roommate through this website was incredibly easy and stress-free! The filters helped me find someone with a similar lifestyle.",
+      "name": "Aisha Rahman",
+      "location": "Dhaka, Bangladesh",
+      "rating": 5,
+      "avatar": "https://randomuser.me/api/portraits/women/65.jpg"
+    },
+    {
+      "id": 2,
+      "quote": "I had a vacant room for months, but after listing it here, I found the perfect tenant within a week. Highly recommended!",
+      "name": "Jamal Hossain",
+      "location": "Chittagong, Bangladesh",
+      "rating": 5,
+      "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      "id": 3,
+      "quote": "The platform's messaging system made communication seamless. I felt safe and supported throughout the entire process.",
+      "name": "Sumi Akter",
+      "location": "Sylhet, Bangladesh",
+      "rating": 4,
+      "avatar": "https://randomuser.me/api/portraits/women/23.jpg"
+    }
+]

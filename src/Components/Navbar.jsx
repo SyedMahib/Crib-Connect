@@ -40,7 +40,7 @@ const Navbar = () => {
       <li className="text-lg">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-[#3D365C] font-bold " : "text-[#7C4585]"
+            isActive ? "text-primary font-bold " : "text-secondary"
           }
           to="/"
         >
@@ -51,7 +51,7 @@ const Navbar = () => {
       <li className="text-lg">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-[#3D365C] font-bold " : "text-[#7C4585]"
+            isActive ? "text-primary font-bold " : "text-secondary"
           }
           to="/addToFindRoommates"
         >
@@ -62,7 +62,7 @@ const Navbar = () => {
       <li className="text-lg">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-[#3D365C] font-bold " : "text-[#7C4585]"
+            isActive ? "text-primary font-bold " : "text-secondary"
           }
           to="/browseListings"
         >
@@ -73,7 +73,7 @@ const Navbar = () => {
       <li className="text-lg">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-[#3D365C] font-bold " : "text-[#7C4585]"
+            isActive ? "text-primary font-bold " : "text-secondary"
           }
           to="/myListings"
         >
@@ -85,7 +85,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm rounded-3xl px-2 md:px-5">
+    <div className="navbar bg-white shadow-sm rounded-3xl px-2 md:px-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -114,7 +114,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-2">
           <img className="w-[35px] md:w-[70px]" src={logo} alt="" />
-          <a className="font-extrabold text-lg md:text-2xl text-[#3D365C]">CribConnect</a>
+          <a className="font-extrabold text-lg md:text-2xl text-primary">CribConnect</a>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -161,13 +161,13 @@ const Navbar = () => {
           <div className="flex flex-col md:flex-row items-center gap-2">
             <Link
               to={`/auth/login`}
-              className=" bg-[#F8B55F] btn text-[#3D365C] font-bold text-xs md:text-sm w-[70px]"
+              className=" bg-[#F8B55F] btn text-primary font-bold text-xs md:text-sm w-[70px]"
             >
               LogIn
             </Link>
             <Link
               to={`/auth/signUp`}
-              className=" bg-[#F8B55F] btn text-[#3D365C] font-bold text-xs md:text-sm w-[70px]"
+              className=" bg-[#F8B55F] btn text-primary font-bold text-xs md:text-sm w-[70px]"
             >
               SignUp
             </Link>
