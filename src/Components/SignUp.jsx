@@ -84,7 +84,6 @@ const SignUp = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
-        console.log(user);
         setUser(user);
         navigate("/");
         Swal.fire({

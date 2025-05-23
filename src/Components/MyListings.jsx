@@ -53,7 +53,6 @@ const MyListings = () => {
             }
           })
           .catch((error) => {
-            console.error("Error deleting listing:", error);
             Swal.fire({
               title: "Error!",
               text: `Failed to delete listing: ${error.message}`,

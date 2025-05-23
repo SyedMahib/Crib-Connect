@@ -5,7 +5,6 @@ import ListingCard from './ListingCard';
 const BrowseListings = () => {
 
     const listings = useLoaderData()
-    console.log(listings);
 
     return (
         <div className='min-h-[calc(100vh-323px)]'>

@@ -10,7 +10,6 @@ const AddToFindRoommates = () => {
     const form = e.target;
     const formData = new FormData(form);
     const newListing = Object.fromEntries(formData.entries());
-    console.log(newListing);
 
     // sending data to the db
 
