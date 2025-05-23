@@ -43,7 +43,7 @@ const BrowseListings = () => {
                   <td className="py-4 px-6 text-primary">{listing.name || 'N/A'}</td> {/* Display name if available */}
                   <td className="py-4 px-6 text-center">
                     <Link
-                      to={`/listings/${listing._id}`}
+                      to={`/listingDetails/${listing._id}`}
                       className="inline-block bg-[#F8B55F] text-primary hover:bg-[#E8A54F] font-bold py-2 px-4 rounded transition duration-200 truncate"
                     >
                       See More

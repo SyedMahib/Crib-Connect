@@ -9,6 +9,7 @@ import { FaHome } from "react-icons/fa";
 import { AiTwotoneFileAdd } from "react-icons/ai";
 import { PiBrowsersFill } from "react-icons/pi";
 import { MdOutlinePostAdd } from "react-icons/md";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
@@ -44,7 +45,7 @@ const Navbar = () => {
           }
           to="/"
         >
-          <FaHome size={21}/>
+          <FaHome size={21} />
           Home
         </NavLink>
       </li>
@@ -66,7 +67,7 @@ const Navbar = () => {
           }
           to="/browseListings"
         >
-          <PiBrowsersFill size={22}/>
+          <PiBrowsersFill size={22} />
           Browse Listing
         </NavLink>
       </li>
@@ -77,7 +78,7 @@ const Navbar = () => {
           }
           to="/myListings"
         >
-          <AiTwotoneFileAdd size={21}/>
+          <AiTwotoneFileAdd size={21} />
           My Listings
         </NavLink>
       </li>
@@ -114,7 +115,9 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-2">
           <img className="w-[35px] md:w-[70px]" src={logo} alt="" />
-          <a className="font-extrabold text-lg md:text-2xl text-primary">CribConnect</a>
+          <a className="font-extrabold text-lg md:text-2xl text-primary">
+            CribConnect
+          </a>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -130,10 +133,14 @@ const Navbar = () => {
             >
               <div className="rounded-full ring">
                 <img
+                  id="user-profile-avatar"
                   className="w-[100px]"
                   alt="User Image"
                   src={`${user && user.photoURL}`}
+                  data-tooltip-content={user.displayName}
+                  data-tooltip-place="bottom"
                 />
+                <Tooltip anchorSelect="#user-profile-avatar" />
               </div>
             </div>
             <ul

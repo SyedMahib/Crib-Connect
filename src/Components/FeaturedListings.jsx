@@ -65,7 +65,7 @@ const FeaturedListings = () => {
 
                 <div className="flex justify-end mt-auto">
                   <Link
-                    to={`/listinigDetails/${listings._id}`}
+                    to={`/listingDetails/${listings._id}`}
                     className="inline-block bg-[#F8B55F] text-primary hover:bg-[#E8A54F] font-bold py-2 px-4 rounded transition duration-200"
                   >
                     See more
