@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router';
-import ListingCard from './ListingCard';
+
 
 const BrowseListings = () => {
 
