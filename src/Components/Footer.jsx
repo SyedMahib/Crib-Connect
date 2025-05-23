@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="space-y-1">
               <h1 className="text-xl font-bold">CribConnect</h1>
               <p className="w-[70%] font-medium">
-                Find your best roommate with dosto khujo
+                Find your best roommate with CribConnect
               </p>
             </div>
           </div>
