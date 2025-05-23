@@ -26,7 +26,7 @@ const FeaturedListings = () => {
 
   return (
     <section className="py-12">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 ">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-8">
           Featured Roommate Posts
         </h2>
@@ -34,9 +34,9 @@ const FeaturedListings = () => {
           {featuredListings.map((listings) => (
             <div
               key={listings._id}
-              className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+              className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col"
             >
-              <div className="p-6">
+              <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold text-primary mb-2">
                   {listings.title}
                 </h3>
@@ -49,21 +49,21 @@ const FeaturedListings = () => {
                 </p>
 
                 <p className="text-gray-600 mb-4">
-                  Status: <span className="text-emerald-600 font-bold">{listings.availability}</span> 
+                  Status:{" "}
+                  <span className="text-emerald-600 font-bold">
+                    {listings.availability}
+                  </span>
                 </p>
 
-                {listings.roomType && (
-                  <p className="text-gray-600 mb-1">
-                    Room Type: {listings.roomType}
-                  </p>
-                )}
-                {listings.lifeStyle && (
-                  <p className="text-gray-600 mb-4">
-                    Lifestyle: {listings.lifeStyle}
-                  </p>
-                )}
+                <p className="text-gray-600 mb-1">
+                  Room Type: {listings.roomType}
+                </p>
 
-                <div className="flex justify-end">
+                <p className="text-gray-600 mb-4">
+                  Lifestyle: {listings.lifeStyle}
+                </p>
+
+                <div className="flex justify-end mt-auto">
                   <Link
                     to={`/listinigDetails/${listings._id}`}
                     className="inline-block bg-[#F8B55F] text-primary hover:bg-[#E8A54F] font-bold py-2 px-4 rounded transition duration-200"
