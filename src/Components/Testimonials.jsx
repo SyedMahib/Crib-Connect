@@ -1,11 +1,29 @@
-import React, { use } from "react";
+import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-const testimonialPromise = fetch("/Testimonials.json").then((res) =>
-  res.json()
-);
 const Testimonials = () => {
-  const testimonials = use(testimonialPromise);
+
+  const [testimonials, setTestimonials] = useState([]);
+  const [error, setError] = useState(null);
+
+  const testimonialData = () => {
+    fetch("https://a-10-server-side-phi.vercel.app/testimonials")
+      .then((res) => res.json())
+      .then((data) => {
+        setTestimonials(data);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  useEffect(() => {
+    testimonialData();
+  }, []);
+
+  if (error) {
+    return <div className="text-center py-8 text-red-500">Error: {error}</div>;
+  }
 
   const renderStars = (rating) => {
     const stars = [];
