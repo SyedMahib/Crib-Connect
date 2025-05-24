@@ -7,6 +7,8 @@ import "./Banner.css";
 import Banner1 from "../assets/Banner-1.png";
 import Banner2 from "../assets/Banner-2.jpg"
 // import Banner3 from "../assets/Banner-3.png"
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const Banner = () => {
   return (
@@ -26,7 +28,21 @@ const Banner = () => {
       >
         <div className="absolute top-75 md:left-30 z-10 md:w-[60%] lg:w-[45%] space-y-3 text-center md:text-start">
           <h1 className="text-white text-3xl md:text-5xl font-bold">
-            Find your perfect roomate. Build your best life
+            
+            <span >
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+            words={['Start building lasting friendships. Create your ideal living space.', 'Access prime properties without the high cost. Simplify your search for a new home.' ,'Find your perfect roomate. Build your best life']}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            // onLoopDone={handleDone}
+            // onType={handleType}
+          />
+        </span>
           </h1>
           <p className="text-lg md:text-xl text-white font-medium md:w-[60%]">Discover compatible matches and create a home you'll love</p>
         </div>
