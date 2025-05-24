@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useContext } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -8,11 +8,14 @@ import { ImProfile } from "react-icons/im";
 import { FaHome } from "react-icons/fa";
 import { AiTwotoneFileAdd } from "react-icons/ai";
 import { PiBrowsersFill } from "react-icons/pi";
-import { MdOutlinePostAdd } from "react-icons/md";
+import { MdDarkMode, MdLightMode, MdOutlinePostAdd } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
+import { ThemeContext } from "../Provider/ThemeProvider";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
 
   const handleLogout = () => {
     logOut()
@@ -41,7 +44,7 @@ const Navbar = () => {
       <li className="text-lg">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-primary font-bold " : "text-secondary"
+            isActive ? "text-primary dark:text-blue-600 font-bold" : "text-secondary"
           }
           to="/"
         >
@@ -86,7 +89,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-white shadow-sm rounded-3xl px-2 md:px-5">
+    <div className="navbar bg-white dark:bg-black shadow-sm rounded-3xl px-2 md:px-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -124,6 +127,17 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
+        <button
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          className="p-2 rounded-full mr-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          {theme === "dark" ? (
+            <MdLightMode size={24} className="text-yellow-400" />
+          ) : (
+            <MdDarkMode size={24} className="text-gray-600" />
+          )}
+        </button>
         {user ? (
           <div className="dropdown dropdown-end">
             <div

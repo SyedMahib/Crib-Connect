@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./Banner.css";
 import Banner1 from "../assets/Banner-1.png";
-import Banner2 from "../assets/Banner-2.png"
+import Banner2 from "../assets/Banner-2.jpg"
 // import Banner3 from "../assets/Banner-3.png"
 
 const Banner = () => {
