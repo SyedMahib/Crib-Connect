@@ -70,7 +70,6 @@ const BrowseListings = () => {
                   <td className="py-4 px-6 text-primary">
                     {listing.name}
                   </td>{" "}
-                  {/* Display name if available */}
                   <td className="py-4 px-6 text-center">
                     <Link
                       to={`/listingDetails/${listing._id}`}

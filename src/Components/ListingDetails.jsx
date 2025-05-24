@@ -159,8 +159,6 @@ const ListingDetails = () => {
               )}
             </div>
           )}
-
-          {/* Back to Browse Button */}
           <div className="text-center mt-10">
             <Link
               to="/browseListings"

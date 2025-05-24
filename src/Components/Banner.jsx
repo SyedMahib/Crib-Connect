@@ -28,7 +28,6 @@ const Banner = () => {
         <div className="absolute top-75 md:left-30 z-10 md:w-[60%] lg:w-[45%] space-y-3 text-center md:text-start">
           <h1 className="text-white text-3xl md:text-5xl font-bold">
             <span>
-              {/* Style will be inherited from the parent element */}
               <Typewriter
                 words={[
                   "Start building lasting friendships. Create your ideal living space.",
@@ -41,8 +40,6 @@ const Banner = () => {
                 typeSpeed={70}
                 deleteSpeed={50}
                 delaySpeed={1000}
-                // onLoopDone={handleDone}
-                // onType={handleType}
               />
             </span>
           </h1>
