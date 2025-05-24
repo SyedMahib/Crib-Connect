@@ -42,7 +42,7 @@ const FeaturedListings = () => {
                 </h3>
 
                 <p className="text-lg font-bold text-secondary mb-2">
-                  ${listings.rentAmount}/month
+                  ৳ {listings.rentAmount}/month
                 </p>
                 <p className="text-gray-600 mb-1">
                   Location: {listings.location}

@@ -86,22 +86,22 @@ const MyListings = () => {
             {/* Table Head */}
             <thead className="bg-[#7C4585] text-white">
               <tr>
-                <th className="p-4 whitespace-nowrap">Title</th>
-                <th className="p-4 whitespace-nowrap">Location</th>
-                <th className="p-4 whitespace-nowrap">Rent Amount</th>
-                <th className="p-4 whitespace-nowrap">Lifestyle</th>
-                <th className="p-4 w-24 whitespace-nowrap">Update</th>
-                <th className="p-4 w-24 whitespace-nowrap">Delete</th>
+                <th className="p-4">Title</th>
+                <th className="p-4">Location</th>
+                <th className="p-4">Rent Amount</th>
+                <th className="p-4">Lifestyle</th>
+                <th className="p-4 w-24">Update</th>
+                <th className="p-4 w-24">Delete</th>
               </tr>
             </thead>
             {/* Table Body */}
             <tbody>
               {myListings.map((listing) => (
                 <tr key={listing._id} className="hover:bg-gray-50 border-b border-gray-200">
-                  <td className="font-semibold text-[#3D365C] p-4 whitespace-nowrap">{listing.title}</td>
-                  <td className="p-4 whitespace-nowrap max-w-[200px] truncate">{listing.location}</td>
-                  <td className="p-4 whitespace-nowrap">৳ {listing.rentAmount}/month</td>
-                  <td className="p-4 whitespace-nowrap">{listing.lifeStyle}</td>
+                  <td className="font-semibold text-[#3D365C] p-4">{listing.title}</td>
+                  <td className="p-4 max-w-[200px] truncate">{listing.location}</td>
+                  <td className="p-4  text-primary font-bold">৳ {listing.rentAmount}/month</td>
+                  <td className="p-4">{listing.lifeStyle}</td>
                   <td className="p-4">
                     <Link to={`/updateListings/${listing._id}`} className="btn btn-sm bg-[#F8B55F] text-[#3D365C] hover:bg-[#E8A54F] border-0 w-full">
                       Update

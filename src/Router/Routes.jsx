@@ -39,6 +39,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/listingDetails/:id",
+        loader: ({params}) => fetch(`https://a-10-server-side-phi.vercel.app/listings/${params.id}`),
         element: (
           <PrivateRoute>
             <ListingDetails></ListingDetails>
