@@ -1,12 +1,46 @@
-# React + Vite
+# 🏠 CribConnect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern roommate and housing finder web app built with **React** and **Tailwind CSS**. Designed to help users seamlessly discover and connect with potential roommates or shared living spaces.
 
-Currently, two official plugins are available:
+🌐 Live Demo: [crib-connect.netlify.app](https://crib-connect.netlify.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔍 **Room & Roommate Listings** – Search and explore available rooms and roommates.
+- 📝 **Registration & Login** – Secure user authentication using Firebase.
+- 📸 **Image Gallery** – Clean, scrollable Swiper gallery for listings.
+- 🎯 **Interactive UI** – Smooth animations, tooltips, and alerts.
+- 📱 **Responsive Design** – Fully optimized for mobile and desktop.
+
+---
+
+## ⚙️ Tech Stack
+
+| Tech                | Usage                           |
+|---------------------|----------------------------------|
+| **React 19**        | Frontend framework              |
+| **Tailwind CSS 4**  | Styling and responsive design   |
+| **Firebase**        | Authentication & backend        |
+| **React Router 7**  | Client-side routing              |
+| **Swiper**          | Carousel for banners/gallery     |
+| **SweetAlert2**     | Stylish alerts and modals        |
+| **React Tooltip**   | Tooltips and hover effects       |
+| **React Icons**     | Iconography                     |
+| **Typewriter**      | Typing effect animations         |
+
+---
+
+## 🚀 Getting Started (Local Development)
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/cribconnect.git
+cd cribconnect
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
