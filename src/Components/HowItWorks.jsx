@@ -9,7 +9,7 @@ const HowItWorks = () => {
     const howItWorks = use(howItWorksPromise);
 
   return (
-    <section className="py-16"> 
+    <section className="my-[100px]"> 
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12">
           How It Works
@@ -19,7 +19,7 @@ const HowItWorks = () => {
           {howItWorks.map((step) => (
             <div
               key={step.id}
-              className="bg-white rounded-lg shadow-lg p-8 text-center transform hover:scale-105 transition-transform duration-300"
+              className="bg-white rounded-xl shadow-lg p-8 text-center transform hover:scale-105 transition-transform duration-300"
             >
               <div className="text-5xl mb-4">
                 {step.icon}

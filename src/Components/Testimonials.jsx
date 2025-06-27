@@ -41,7 +41,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16">
+    <section className="mb-[100px]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12">
           What Our Users Say
@@ -51,7 +51,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-lg shadow-md p-8 text-center flex flex-col items-center flex-grow"
+              className="bg-white rounded-xl shadow-md p-8 text-center flex flex-col items-center flex-grow"
             >
               {testimonial.avatar && (
                 <img

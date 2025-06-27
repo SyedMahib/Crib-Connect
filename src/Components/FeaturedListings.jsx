@@ -25,7 +25,7 @@ const FeaturedListings = () => {
   }
 
   return (
-    <section className="py-12">
+    <section className="mb-[100px]">
       <div className="container mx-auto px-4 ">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-8">
           Featured Roommate Posts
@@ -34,8 +34,15 @@ const FeaturedListings = () => {
           {featuredListings.map((listings) => (
             <div
               key={listings._id}
-              className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col"
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col"
             >
+              <div className="w-full h-48 overflow-hidden">
+                <img
+                  className="w-full h-full object-cover object-center"
+                  src={listings.image}
+                  alt={listings.title}
+                />
+              </div>
               <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold text-primary mb-2">
                   {listings.title}
@@ -57,10 +64,6 @@ const FeaturedListings = () => {
 
                 <p className="text-gray-600 mb-1">
                   Room Type: {listings.roomType}
-                </p>
-
-                <p className="text-gray-600 mb-4">
-                  Lifestyle: {listings.lifeStyle}
                 </p>
 
                 <div className="flex justify-end mt-auto">

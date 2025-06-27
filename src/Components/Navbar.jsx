@@ -1,20 +1,17 @@
-import React, { use, useContext } from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { IoLogOut } from "react-icons/io5";
-import { ImProfile } from "react-icons/im";
-import { FaHome } from "react-icons/fa";
+import { FaBlenderPhone, FaExclamationCircle, FaHome } from "react-icons/fa";
 import { AiTwotoneFileAdd } from "react-icons/ai";
 import { PiBrowsersFill } from "react-icons/pi";
-import { MdDarkMode, MdLightMode, MdOutlinePostAdd } from "react-icons/md";
+import { MdDashboardCustomize, MdOutlinePostAdd, MdOutlineSupportAgent } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
-import { ThemeContext } from "../Provider/ThemeProvider";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
-  const { theme, toggleTheme } = useContext(ThemeContext);
 
 
   const handleLogout = () => {
@@ -57,10 +54,10 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive ? "text-primary font-bold " : "text-secondary"
           }
-          to="/addToFindRoommates"
+          to="/about"
         >
-          <MdOutlinePostAdd size={25} />
-          Add to Find Roommate
+          <FaExclamationCircle size={20} />
+          About Us
         </NavLink>
       </li>
       <li className="text-lg">
@@ -79,10 +76,21 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive ? "text-primary font-bold " : "text-secondary"
           }
-          to="/myListings"
+          to="/contact"
         >
-          <AiTwotoneFileAdd size={21} />
-          My Listings
+          <FaBlenderPhone size={20} />
+          Contact Us
+        </NavLink>
+      </li>
+      <li className="text-lg">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-primary font-bold " : "text-secondary"
+          }
+          to="/support"
+        >
+          <MdOutlineSupportAgent size={23} />
+          Support
         </NavLink>
       </li>
     </>
@@ -127,17 +135,6 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <button
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-          className="p-2 rounded-full mr-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        >
-          {theme === "dark" ? (
-            <MdLightMode size={24} className="text-yellow-400" />
-          ) : (
-            <MdDarkMode size={24} className="text-gray-600" />
-          )}
-        </button>
         {user ? (
           <div className="dropdown dropdown-end">
             <div
@@ -162,10 +159,10 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a className="text-primary font-bold text-sm">
-                  <ImProfile size={22} />
-                  Profile
-                </a>
+                <Link to="/dashboard" className="text-primary font-bold text-sm">
+                  <MdDashboardCustomize size={22}/>
+                  Dashboard
+                </Link>
               </li>
               <li>
                 <button

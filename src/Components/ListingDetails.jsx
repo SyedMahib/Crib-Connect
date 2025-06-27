@@ -1,11 +1,12 @@
 import React, { use, useState } from "react";
-import { Link, useLoaderData,  } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const ListingDetails = () => {
   const {
     _id,
+    image,
     name,
     email,
     title,
@@ -64,6 +65,14 @@ const ListingDetails = () => {
             {likeCount} people interested in this post!
           </p>
 
+          <div className="w-full max-h-96 overflow-hidden mx-auto mb-6 rounded-lg shadow-md">
+            <img
+              className="w-full h-full object-cover object-center"
+              src={image}
+              alt={title}
+            />
+          </div>
+
           <h1 className="text-2xl md:text-4xl font-bold text-primary mb-6 text-center">
             {title}
           </h1>
@@ -108,9 +117,7 @@ const ListingDetails = () => {
               <p className="text-gray-600 font-semibold">
                 Lifestyle Preference:
               </p>
-              <p className="text-lg text-gray-800">
-                {lifeStyle}
-              </p>
+              <p className="text-lg text-gray-800">{lifeStyle}</p>
             </div>
 
             {/* Posted By */}
@@ -141,7 +148,7 @@ const ListingDetails = () => {
           </div>
 
           {/* Contact Information */}
-          {showContact && ( 
+          {showContact && (
             <div className="mt-8 pt-8 border-t border-gray-200">
               <h3 className="text-2xl font-bold text-primary mb-4 text-center">
                 Contact Information

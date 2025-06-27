@@ -103,7 +103,7 @@ const MyListings = () => {
                   <td className="p-4  text-primary font-bold">৳ {listing.rentAmount}/month</td>
                   <td className="p-4">{listing.lifeStyle}</td>
                   <td className="p-4">
-                    <Link to={`/updateListings/${listing._id}`} className="btn btn-sm bg-[#F8B55F] text-[#3D365C] hover:bg-[#E8A54F] border-0 w-full">
+                    <Link to={`/dashboard/updateListings/${listing._id}`} className="btn btn-sm bg-[#F8B55F] text-[#3D365C] hover:bg-[#E8A54F] border-0 w-full">
                       Update
                     </Link>
                   </td>

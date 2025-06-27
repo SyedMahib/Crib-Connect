@@ -11,6 +11,11 @@ import PrivateRoute from "../Provider/PrivateRoute";
 import UpdateListings from "../Components/UpdateListings";
 import ListingDetails from "../Components/ListingDetails";
 import ErrorPage from "../Components/ErrorPage";
+import DashBoardLayout from "../Layouts/DashBoardLayout";
+import Overview from "../Components/Overview";
+import AboutUs from "../Components/AboutUs";
+import ContactUs from "../Components/ContactUs";
+import Support from "../Components/Support";
 
 export const router = createBrowserRouter([
   {
@@ -23,12 +28,16 @@ export const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: "/addToFindRoommates",
-        element: (
-          <PrivateRoute>
-            <AddToFindRoommates></AddToFindRoommates>
-          </PrivateRoute>
-        )
+        path: "/about",
+        element: <AboutUs></AboutUs>
+      },
+      {
+        path:"/contact",
+        element: <ContactUs></ContactUs>
+      },
+      {
+        path:"/support",
+        element: <Support></Support>
       },
       {
         path: "/browseListings",
@@ -37,34 +46,22 @@ export const router = createBrowserRouter([
           <PrivateRoute>
             <BrowseListings></BrowseListings>
           </PrivateRoute>
-        )
+        ),
       },
       {
         path: "/listingDetails/:id",
-        loader: ({params}) => fetch(`https://a-10-server-side-phi.vercel.app/listings/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://a-10-server-side-phi.vercel.app/listings/${params.id}`
+          ),
         element: (
           <PrivateRoute>
             <ListingDetails></ListingDetails>
           </PrivateRoute>
-        )
-      },
-      {
-        path: "/myListings",
-        element: (
-          <PrivateRoute>
-            <MyListings></MyListings>
-          </PrivateRoute>
         ),
       },
-      {
-        path: "/updateListings/:id",
-        loader: ({params}) => fetch(`https://a-10-server-side-phi.vercel.app/listings/${params.id}`),
-        element: (
-          <PrivateRoute>
-            <UpdateListings></UpdateListings>
-          </PrivateRoute>
-        )
-      }
+      
+      
     ],
   },
   {
@@ -80,5 +77,47 @@ export const router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashBoardLayout></DashBoardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <Overview></Overview>
+      },
+     {
+        path: "/dashboard/addToFindRoommates",
+        element: (
+          <PrivateRoute>
+            <AddToFindRoommates></AddToFindRoommates>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/myListings",
+        element: (
+          <PrivateRoute>
+            <MyListings></MyListings>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/updateListings/:id",
+        loader: ({ params }) =>
+          fetch(
+            `https://a-10-server-side-phi.vercel.app/listings/${params.id}`
+          ),
+        element: (
+          <PrivateRoute>
+            <UpdateListings></UpdateListings>
+          </PrivateRoute>
+        ),
+      },
+    ]
   },
 ]);

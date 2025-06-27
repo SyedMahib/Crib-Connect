@@ -5,8 +5,8 @@ import Logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="footer  bg-[#3D365C]   p-10">
-      <div className="flex flex-col md:flex-row justify-between text-neutral-content md:items-center container md:mx-auto">
+    <footer className="footer  bg-[#3D365C] p-10">
+      <div className="flex flex-col gap-5 md:gap-0 md:flex-row justify-between text-neutral-content md:items-center container md:mx-auto">
         <aside className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             <img src={Logo} alt="" className="w-[85px]" />
@@ -21,6 +21,25 @@ const Footer = () => {
             Copyright © {new Date().getFullYear()} - All right reserved
           </p>
         </aside>
+        <div>
+          <h1 className="font-bold text-lg mb-2">Company</h1>
+          <div>
+            <ul className="space-y-2">
+              <li className="hover:font-bold">
+                <Link to="/about">About Us</Link>
+              </li>
+              <li className="hover:font-bold">
+                <Link to="/browselistings">BrowseListings</Link>
+              </li>
+              <li className="hover:font-bold">
+                <Link to="/contact">Contact Us</Link>
+              </li>
+              <li className="hover:font-bold">
+                <Link to="/support">Support</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div>
           <h1 className="font-bold mb-2 text-lg">Contact Us</h1>
           <div className="flex flex-col gap-2">

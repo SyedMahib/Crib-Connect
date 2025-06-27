@@ -11,9 +11,10 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
   return (
-    <div className="mt-10 mb-10">
+    <div className="mt-10 mb-10 h-[650px]">
       <Swiper
-        spaceBetween={30}
+        spaceBetween={0}
+        loop={true}
         centeredSlides={true}
         autoplay={{
           delay: 2500,
@@ -25,7 +26,7 @@ const Banner = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper relative md:rounded-2xl"
       >
-        <div className="absolute top-75 md:left-30 z-10 md:w-[60%] lg:w-[45%] space-y-3 text-center md:text-start">
+        <div className="absolute top-60 md:left-30 z-10 md:w-[60%] lg:w-[45%] space-y-3 text-center md:text-start">
           <h1 className="text-white text-3xl md:text-5xl font-bold">
             <span>
               <Typewriter

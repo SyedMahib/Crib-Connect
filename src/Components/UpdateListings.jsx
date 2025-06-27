@@ -43,7 +43,7 @@ const UpdateListings = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          navigate("/myListings")
+          navigate("/dashboard/myListings")
         }
       });
   };
