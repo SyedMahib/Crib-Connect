@@ -16,6 +16,7 @@ import Overview from "../Components/Overview";
 import AboutUs from "../Components/AboutUs";
 import ContactUs from "../Components/ContactUs";
 import Support from "../Components/Support";
+import Profile from "../Components/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -118,6 +119,10 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/dashboard/profile",
+        element: <Profile></Profile>
+      }
     ]
   },
 ]);
